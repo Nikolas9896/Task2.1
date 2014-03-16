@@ -9,9 +9,9 @@
     #define ENTER '\n'
     #define ZERO '\0'
     #define ONE 1
-    #define OLD 1970
+    #define OLD 500
     #define FUTURE 2015
-
+    #define  LINE puts("\n__________________________________________________ \n");
     struct Librery
     {
          unsigned int num;

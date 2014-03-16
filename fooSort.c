@@ -1,12 +1,20 @@
 #include<stdio.h>
 #include"fooSort.h"
 
-int fooSort( struct Librery *pbook )
+int FooSort( struct Librery *pbook )
 
 {
     int i;
+    if( pbook == ZERO )
+    {
+        i = -1;
+        puts( "Warning!!! Application doesn't use normally memory. Please restart application for normally work!" );
+        return i;
+    }
 
-    printf("SORT");
-
+    else if( pbook != ZERO )
+    {
+        printf("SORT");
+    }
     return i;
 }

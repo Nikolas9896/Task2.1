@@ -5,9 +5,9 @@ int main()
 
 {
 
-    fooIn ( pbook );
-    fooOut( pbook );
-    fooSort( pbook );
+    FooIn ( pbook );
+    FooOut( pbook );
+    FooSort( pbook );
 
     return 0;
 }

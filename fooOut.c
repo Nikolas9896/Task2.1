@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include"fooOut.h"
 
- int fooOut( struct Librery *pbook )
+int FooOut( struct Librery *pbook )
 
 {
   int i;
@@ -14,10 +14,10 @@
 
   else if( pbook != ZERO )
   {
-      printf("Books in alfabetic numeretion\n");
+      puts( "Books are in alfabetic numeration which aren't oldest of 1970\n" );
       for( i = ZERO; i != KILK4; ++i )
       {
-
+            pbook -> num = i+ONE;
             printf("%d. %s %s\t\" %s \"\t %u \tcomment: %s \n", pbook -> num,\
                                                                 pbook -> surname,\
                                                                 pbook -> name,\

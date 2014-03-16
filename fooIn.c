@@ -1,9 +1,11 @@
 #include<stdio.h>
 #include"fooIn.h"
+int Checking();
 
- int fooIn( struct Librery *pbook )
+int FooIn( struct Librery *pbook )
 
 {   int i;
+    int ind = 1;
 
     if( pbook == ZERO )
     {
@@ -13,48 +15,72 @@
     }
     else if( pbook != ZERO )
     {
-
+        LINE
+        puts("\t- Welcome! - To the \"Library\" system");
+        LINE
         for( i = ZERO; i != KILK4; ++i )
-
         {
-         /* Number */
-            pbook->num = i + ONE;
-
-        /* Autor */
-
-                 printf("Please, enter autor name and surname for %d book :\n", pbook -> num );
-                 scanf( "%s %s", pbook -> name, pbook -> surname );
-                 scanf( "%*c" );
-
-         /* Book */
-          printf( "Enter book which wrote %s %s :",  pbook -> name, pbook -> surname  );
-          scanf("%[^\n]", pbook -> book_name );
-          scanf( "%*c" );
-          printf("%s\n", pbook -> book_name );
-
-
-         /* Year of creation */
-
-             while ( ( pbook->year > FUTURE ) || ( pbook->year <= OLD ) )
-
-                {
-
-                  printf("Enter year creation of book : \n");
-                  scanf("%u", &(*pbook).year);
-                  scanf( "%*c" );
-                  printf("Year: %u\n", pbook -> year);
-
-                }
-
-         /* Comment about book */
-          printf("Enter your coment : \n");
-          scanf( "%[^\n]", pbook -> comment );
-          scanf( "%*c" );
-          printf( "%s\n", pbook -> comment );
-
-          /* next one */
-         ++pbook;
+            /* Autor Name*/
+            while( ind )
+            {
+                puts( "Please, enter autor's name:" );
+                scanf( "%s", pbook -> name );
+                ind = Checking();
+                LINE
+            }
+            ++ind;
+            /* Autor Surname */
+            while( ind )
+            {
+                puts( "Please, enter autor's surname:" );
+                scanf( "%s", pbook -> surname );
+                ind = Checking();
+                LINE
+            }
+            ++ind;
+            /* Book */
+            printf( "Enter book which wrote %s %s :\n",  pbook -> name, pbook -> surname  );
+            scanf("%[^\n]", pbook -> book_name );
+            scanf( "%*c" );
+            LINE
+            /* Year of creation */
+            while ( ( pbook->year > FUTURE ) || ( pbook->year <= OLD ) )
+            {
+                printf("Enter year creation of book( from 500 to 2014 ) : \n");
+                scanf("%u", &(*pbook).year);
+                scanf( "%*c" );
+                printf("Year: %u\n", pbook -> year);
+            }
+            LINE
+            /* Comment about book */
+            printf("Enter your coment : \n");
+            scanf( "%[^\n]", pbook -> comment );
+            scanf( "%*c" );
+            LINE
+            /* next one */
+            ++pbook;
         }
     }
- return i;
+    return i;
+}
+
+int Checking()
+{
+    char ch;
+    int ind = 1;
+    while( ch != '\n' )
+    {
+        ch = getchar();
+        /* discard */
+        --ind;
+    }
+    if( ind < 0 )
+    {
+        puts( "\nWarning! Please, Try again but, only one word!" );
+        return ind;
+    }
+    else
+    {
+        return ind;
+    }
 }

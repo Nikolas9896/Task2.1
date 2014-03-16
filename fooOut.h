@@ -1,6 +1,6 @@
 #ifndef FOOOUTh
 #define FOOOUTh 1
     #include"structLibrery.h"
-    int fooOut ( struct Librery *pbook );
+    int FooOut ( struct Librery *pbook );
 #endif
 
