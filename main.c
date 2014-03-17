@@ -6,9 +6,8 @@ int main()
 {
 
     FooIn ( pbook );
+    FooSort( pbook, KILK4 );
     FooOut( pbook );
-    FooSort( pbook );
-
     return 0;
 }
 
