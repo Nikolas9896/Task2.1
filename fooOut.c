@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include"fooOut.h"
-
+#define YEAR_FILTER 1970
 int FooOut( struct Librery *pbook )
 
 {
@@ -18,13 +18,16 @@ int FooOut( struct Librery *pbook )
       for( i = ZERO; i != KILK4; ++i )
       {
             pbook -> num = i+ONE;
-            printf("%d. %s %s\t\" %s \"\t %u \tcomment: %s \n", pbook -> num,\
-                                                                pbook -> surname,\
-                                                                pbook -> name,\
-                                                                pbook -> book_name,\
-                                                                pbook -> year,\
-                                                                pbook -> comment);
-            ++pbook;
+            if( (pbook -> year) >= YEAR_FILTER )
+            {
+                printf("%d. %s %s\t\" %s \"\t %u \tcomment: %s \n", pbook -> num,\
+                                                                    pbook -> surname,\
+                                                                    pbook -> name,\
+                                                                    pbook -> book_name,\
+                                                                    pbook -> year,\
+                                                                    pbook -> comment);
+             }
+             ++pbook;
 
         }
    }

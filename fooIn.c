@@ -48,8 +48,8 @@ int FooIn( struct Librery *pbook )
             {
                 printf("Enter year creation of book( from 500 to 2014 ) : \n");
                 scanf("%u", &(*pbook).year);
-                scanf( "%*c" );
-                printf("Year: %u\n", pbook -> year);
+                Checking();
+
             }
             LINE
             /* Comment about book */
@@ -70,13 +70,14 @@ int Checking()
     int ind = 1;
     while( ch != '\n' )
     {
-        ch = getchar();
         /* discard */
+        ch = getchar();
         --ind;
+
     }
     if( ind < 0 )
     {
-        puts( "\nWarning! Please, Try again but, only one word!" );
+        puts( "\nAttention! Please, enter text more carefully without breakspace!" );
         return ind;
     }
     else
